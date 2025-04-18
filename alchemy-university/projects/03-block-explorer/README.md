@@ -15,6 +15,12 @@ A simple and clean Ethereum block explorer built with React + Alchemy SDK.
 - Uses Alchemy’s SDK and ethers-powered utilities
 - Styled for clarity and accessibility
 
+## 🖼️ Preview
+
+Here’s a preview of the Ethereum Block Explorer:
+![Block Explorer Screenshot](./screenshots/block-explorer-preview.png)
+
+
 ## ⚙️ Tech Stack
 
 - React (Frontend)
