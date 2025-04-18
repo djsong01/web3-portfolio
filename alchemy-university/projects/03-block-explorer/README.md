@@ -1,3 +1,31 @@
+# 🧱 Ethereum Block Explorer
+
+A simple and clean Ethereum block explorer built with React + Alchemy SDK.
+
+## 🔍 Features
+
+- Shows latest block data:
+  - Block number
+  - Hash
+  - Gas Used
+  - Miner 
+  - Timestamp
+  - Transactions
+- Displays top 5 highest-value transactions in real-time
+- Uses Alchemy’s SDK and ethers-powered utilities
+- Styled for clarity and accessibility
+
+## ⚙️ Tech Stack
+
+- React (Frontend)
+- Alchemy SDK
+- JavaScript (ES6)
+- HTML/CSS
+
+
+Below is the original README
+___
+
 # Ethereum Block Explorer
 
 The lessons this week covered the Ethereum JSON-RPC API and the `ethers.js` library giving us the ability to query the Ethereum blockchain and make transactions!
