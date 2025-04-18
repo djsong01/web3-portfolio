@@ -1,0 +1,9 @@
+# Ignore all node_modules across the project
+node_modules/
+
+# Optional extras
+.env
+.DS_Store
+.vscode/
+dist/
+build/
