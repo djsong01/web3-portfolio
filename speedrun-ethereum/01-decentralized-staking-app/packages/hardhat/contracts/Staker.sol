@@ -6,9 +6,10 @@ import "./ExampleExternalContract.sol";
 
 contract Staker {
     ExampleExternalContract public exampleExternalContract;
+    uint256 public deadline;
     constructor(address exampleExternalContractAddress) {
         exampleExternalContract = ExampleExternalContract(exampleExternalContractAddress);
-        uint256 public deadline = block.timestamp + 72 hours;
+        deadline = block.timestamp + 72 hours;
     }
     modifier notComplete(){
         require(!exampleExternalContract.completed(), "Already completed");
@@ -29,7 +30,6 @@ contract Staker {
     // After some `deadline` allow anyone to call an `execute()` function
     // If the deadline has passed and the threshold is met, it should call `exampleExternalContract.complete{value: address(this).balance}()`
     bool public openForWithdraw = false;
-
     function execute() public notComplete{
         require(block.timestamp >= deadline, "Deadline not reached");
         if(address(this).balance >= threshold){
