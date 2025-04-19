@@ -1,3 +1,28 @@
+## 🧠 My Work: Challenge 1 - Decentralized Staking App
+
+This project is my implementation of the **Speedrun Ethereum Challenge 1** using Scaffold-ETH 2.
+
+### ✅ What I Built
+- A smart contract `Staker.sol` that:
+  - Accepts ETH via `stake()` or `receive()`
+  - Emits `Stake` events for frontend visibility
+  - Tracks balances with a mapping
+  - Supports `execute()` after a deadline with threshold logic
+  - Allows `withdraw()` if the threshold is not met
+- Frontend connected to Sepolia Testnet with MetaMask
+- Event log to display real staking activity
+- Fully deployed app via Vercel
+
+### 🔗 Live Site
+[Vercel Deployment](https://01-decentralized-staking-abqiwjmsg-djs-projects-d7073ad6.vercel.app/)
+
+### 📸 Screenshot
+![Staker UI Screenshot](./screenshots/staker-ui.png)
+![Staking Events Screenshot](./screenshots/staking-events.png)  
+
+
+Below is the original README from the project.
+___
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
