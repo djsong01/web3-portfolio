@@ -19,7 +19,7 @@ This project is my implementation of the **Speedrun Ethereum Challenge 1** using
 ### 📸 Screenshot
 ![Staker UI Screenshot](./screenshots/staker-ui.png)
 ![Staking Events Screenshot](./screenshots/staking-events.png)  
-![Challenge Completion](./screenshots/completion.png))  
+![Challenge Completion](./screenshots/completion.png)
 
 
 Below is the original README from the project.
