@@ -1,4 +1,29 @@
-<<<<<<< HEAD
+## 🧠 My Work: Challenge 0 - Simple NFT Example
+
+This is my implementation of Speedrun Ethereum Challenge 0. It served as my first dive into Solidity and smart contract deployment.
+
+### ✅ What I Built
+
+A basic NFT contract `MyNFT.sol` that:
+
+- Allows users to mint NFTs using `mintItem()`
+- Tracks ownership using `ownerOf()`
+- Emits `Transfer` events
+- Deploys to the Sepolia Testnet
+
+Frontend built with Scaffold-ETH 2:
+
+- Local UI to mint and display NFTs
+- Connected to Sepolia Testnet with MetaMask
+- Fully deployed frontend via Vercel
+
+### 🔗 Live Site
+
+[Vercel Deployment](https://speedrun-ethereum-01-challenge-decentralized-staking.vercel.app/)
+[Sepolia Etherscan](https://sepolia.etherscan.io/address/0x201715F22C144cd677bAE0868844D0EfC9ED5107)
+
+Below is the original README from the project.
+---
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
@@ -249,6 +274,4 @@ To know more about its features, check out our [website](https://scaffoldeth.io)
 We welcome contributions to Scaffold-ETH 2!
 
 Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
-=======
 # speedrun-ethereum-nft-0
->>>>>>> 84c9bd6a349e9517cc061cdaf348e58f10f8600a
