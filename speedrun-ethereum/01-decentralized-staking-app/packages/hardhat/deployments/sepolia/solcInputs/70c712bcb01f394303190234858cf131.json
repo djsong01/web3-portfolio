@@ -1,0 +1,39 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/ExampleExternalContract.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.20; //Do not change the solidity version as it negatively impacts submission grading\n\ncontract ExampleExternalContract {\n    bool public completed;\n\n    function complete() public payable {\n        completed = true;\n    }\n}\n"
+    },
+    "contracts/Staker.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.20; //Do not change the solidity version as it negatively impacts submission grading\n\n//import \"hardhat/console.sol\";\nimport \"./ExampleExternalContract.sol\";\n\ncontract Staker {\n    ExampleExternalContract public exampleExternalContract;\n    uint256 public deadline;\n    constructor(address exampleExternalContractAddress) {\n        exampleExternalContract = ExampleExternalContract(exampleExternalContractAddress);\n        deadline = block.timestamp + 72 hours;\n    }\n    modifier notComplete(){\n        require(!exampleExternalContract.completed(), \"Already completed\");\n        _;\n    }\n\n    mapping(address => uint256) public balances;\n    uint256 public constant threshold = 1 ether;\n    event Stake(address indexed staker, uint256 amount);\n\n    // Collect funds in a payable `stake()` function and track individual `balances` with a mapping:\n    // (Make sure to add a `Stake(address,uint256)` event and emit it for the frontend `All Stakings` tab to display)\n    function stake() public payable {\n        balances[msg.sender] += msg.value;\n        emit Stake(msg.sender, msg.value);\n    }\n\n    // After some `deadline` allow anyone to call an `execute()` function\n    // If the deadline has passed and the threshold is met, it should call `exampleExternalContract.complete{value: address(this).balance}()`\n    bool public openForWithdraw = false;\n    function execute() public notComplete{\n        require(block.timestamp >= deadline, \"Deadline not reached\");\n        if(address(this).balance >= threshold){\n            exampleExternalContract.complete{value: address(this).balance}();\n        }\n        else{\n            openForWithdraw = true;\n        }\n    }\n    \n    // Add a `timeLeft()` view function that returns the time left before the deadline for the frontend\n    function timeLeft() public view returns(uint256){\n        if(block.timestamp >= deadline){\n            return 0;\n        }\n        else{\n            return deadline - block.timestamp;\n        }\n    }\n\n    // If the `threshold` was not met, allow everyone to call a `withdraw()` function to withdraw their balance\n    function withdraw() public notComplete{\n        require(openForWithdraw, \"Withdrawals not open\");\n        uint256 amount = balances[msg.sender];\n        require (amount > 0, \"You broke\");\n        balances[msg.sender] = 0;\n        (bool s, ) = msg.sender.call{value: amount}(\"\");\n        require (s, \"Failed to send Ether\");\n    }\n\n    // Add the `receive()` special function that receives eth and calls stake()\n    receive() external payable {\n        stake();\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
