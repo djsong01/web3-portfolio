@@ -6,6 +6,7 @@ This repo tracks my journey through various web3 developer challenges, bootcamps
 
 | Project | Description | Stack |
 |--------|-------------|-------|
+[`escrow-dapp`](./alchemy-university/projects/04-escrow-application/) | Decentralized escrow app with arbiter-controlled ETH release and contract deployment UI | Solidity, React, Hardhat |
 | [`staking-app`](./speedrun-ethereum/01-decentralized-staking-app/) | Group staking dApp with deadline + withdraw logic | Solidity, Scaffold-ETH, Vercel |
 | [`ethereum-block-explorer`](./alchemy-university/projects/03-block-explorer) | React-based explorer showing live block data and top 5 transactions on Ethereum mainnet | React, Alchemy SDK |
 | [`merkle-gift-list`](./alchemy-university/projects/02-merkle-tree-gift-list) | Merkle tree airdrop verifier with client-server interaction | Node.js, JavaScript |
