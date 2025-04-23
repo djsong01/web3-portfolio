@@ -1,10 +1,10 @@
 # 🧾 Decentralized Escrow Application
----
+
 A full-stack Ethereum dApp that simulates an escrow contract between a depositor, arbiter, and beneficiary using smart contracts, React, and Hardhat.
 > ℹ️ This project was originally cloned from [alchemyplatform/escrow-hardhat](https://github.com/alchemyplatform/escrow-hardhat). The README and implementation have been customized based on my development experience and learning.
 
 ## 🧠 What I Built
----
+
 This project demonstrates a working decentralized escrow flow:
 
 - 🏗️ Deploy escrow contracts locally with Hardhat
@@ -14,7 +14,7 @@ This project demonstrates a working decentralized escrow flow:
 - 🌐 React frontend with MetaMask integration and contract event updates
 
 ## ⚙️ Tech Stack
----
+
 - [Solidity](https://docs.soliditylang.org/)
 - [Hardhat](https://hardhat.org/)
 - [React](https://reactjs.org/)
@@ -23,7 +23,7 @@ This project demonstrates a working decentralized escrow flow:
 ---
 
 ## 🚀 Getting Started
----
+
 ### 🛠️ Step 1: Clone the Repo
 
 ```bash
@@ -85,11 +85,11 @@ Then visit: [http://localhost:3000](http://localhost:3000)
 ---
 
 ## 📸 Screenshot
----
+
 ![screenshot](./app/public/result.png)
 
 ## 💡 Features To Add
----
+
 - [ ] Deploy to Sepolia testnet
 - [ ] UI validation for form inputs
 - [ ] Display ETH balance of connected wallet
@@ -97,6 +97,6 @@ Then visit: [http://localhost:3000](http://localhost:3000)
 
 
 ## 📜 License
----
-MIT — do whatever you want, just give credit when credit is due 🙌
+
+MIT — Feel free to clone or edit
 
